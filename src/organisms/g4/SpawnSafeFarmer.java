@@ -81,7 +81,7 @@ public final class SpawnSafeFarmer implements Player {//this class it really goo
 		//CHECK FOR OVER ABONDANT FOOD
 		
 
-		if(foodleft > 75) {
+		if(foodleft > 75 && state == 30) {
 			state = 29;
 		}
 		

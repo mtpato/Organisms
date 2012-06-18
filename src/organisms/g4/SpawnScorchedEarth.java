@@ -8,13 +8,13 @@ import organisms.*;
 
 public final class SpawnScorchedEarth implements Player {
 
-	static final String _CNAME = "SpawnScorchedEarth"; 
+	static final String _CNAME = "SpawnStarver"; 
 	static final Color _CColor = new Color(1.0f, 0.67f, 0.67f);
 	private int state;
 	private Random rand;
 	private OrganismsGame game;
 
-
+	
 	/*
 	 * This method is called when the Organism is created.
 	 * The key is the value that is passed to this organism by its parent (not used here)

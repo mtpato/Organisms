@@ -73,18 +73,19 @@ public final class SpawnPlayerAlter implements Player {
 			// System.out.println("MAKE NEW ONE");
 			m = spawn(foodpresent, neighbors);
 		}  else {
-			if (state > 29) m = moveToFood(foodpresent, neighbors, foodleft, energyleft, 5);
-			else m = moveToFood(foodpresent, neighbors, foodleft, energyleft, 1);
+			m = moveToFood(foodpresent, neighbors, foodleft, energyleft, 1);
 		} 
 			
 		//CHECK FOR OVER ABONDANT FOOD
 		
 
-		if(foodleft > 75) {
+
+		
+		if(foodleft > 75 && state == 30 || state == 20) {
 			state = 29;
-		}
+		} 
 		
-		
+
 		
 		
 		
