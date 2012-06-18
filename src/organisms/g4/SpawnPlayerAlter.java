@@ -6,10 +6,10 @@ import java.awt.Color;
 
 import organisms.*;
 
-public final class SpawnPlayer implements Player {
+public final class SpawnPlayerAlter implements Player {
 
-	static final String _CNAME = "SpawnPlayer";
-	static final Color _CColor = Color.CYAN;
+	static final String _CNAME = "SpawnPlayerAlter";
+	static final Color _CColor = new Color(1.0f, 0.67f, 0.67f);
 	private int state;
 	private Random rand;
 	private OrganismsGame game;
@@ -66,20 +66,23 @@ public final class SpawnPlayer implements Player {
 
 		Move m = null; // placeholder for return value
 		
+
 		
-		if (energyleft > 200 + state * 10) { // if energy over 400 try to reproduce
+		if (energyleft > 200 + state * 20) { // if energy over 400 try to reproduce
 
 			// System.out.println("MAKE NEW ONE");
 			m = spawn(foodpresent, neighbors);
 		}  else {
-			m = moveToFood(foodpresent, neighbors, foodleft);
+			m = moveToFood(foodpresent, neighbors, foodleft, energyleft);
 		} 
 			
 		//CHECK FOR OVER ABONDANT FOOD
 		
+
 		if(foodleft > 75) {
 			state = 29;
 		}
+		
 		
 		
 		
@@ -106,10 +109,10 @@ public final class SpawnPlayer implements Player {
 		return m;
 	}
 
-	private Move moveToFood(boolean[] foodpresent, int[] neighbors, int foodleft) throws Exception {
+	private Move moveToFood(boolean[] foodpresent, int[] neighbors, int foodleft, int energyleft) throws Exception {
 		Move m = null;
 		
-		if(foodleft > 1) {
+		if(foodleft > 1) {//EAT IT ALL 
 			m = new Move(STAYPUT);
 		} else if (foodpresent[WEST] && neighbors[WEST] == -1) {
 			m = new Move(WEST);
