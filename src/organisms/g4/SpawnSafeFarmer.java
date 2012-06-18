@@ -6,9 +6,11 @@ import java.awt.Color;
 
 import organisms.*;
 
-public final class SpawnPlayerAlter implements Player {
+public final class SpawnSafeFarmer implements Player {//this class it really good once there is lots of food 
+													  //it only expands north and west so that food is left behind and 
+													  //and so that growth is in one direction 
 
-	static final String _CNAME = "SpawnPlayerAlter";
+	static final String _CNAME = "SpawnSafeFarmer";
 	static final Color _CColor = new Color(1.0f, 0.67f, 0.67f);
 	private int state;
 	private Random rand;
@@ -73,8 +75,7 @@ public final class SpawnPlayerAlter implements Player {
 			// System.out.println("MAKE NEW ONE");
 			m = spawn(foodpresent, neighbors);
 		}  else {
-			if (state > 29) m = moveToFood(foodpresent, neighbors, foodleft, energyleft, 5);
-			else m = moveToFood(foodpresent, neighbors, foodleft, energyleft, 1);
+			m = moveToFood(foodpresent, neighbors, foodleft, energyleft);
 		} 
 			
 		//CHECK FOR OVER ABONDANT FOOD
@@ -110,10 +111,10 @@ public final class SpawnPlayerAlter implements Player {
 		return m;
 	}
 
-	private Move moveToFood(boolean[] foodpresent, int[] neighbors, int foodleft, int energyleft, int hold) throws Exception {
+	private Move moveToFood(boolean[] foodpresent, int[] neighbors, int foodleft, int energyleft) throws Exception {
 		Move m = null;
 		
-		if(foodleft > hold) {//EAT IT ALL 
+		if(foodleft > 1) {//EAT IT ALL 
 			m = new Move(STAYPUT);
 		} else if (foodpresent[WEST] && neighbors[WEST] == -1) {
 			m = new Move(WEST);
