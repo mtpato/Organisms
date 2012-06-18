@@ -77,7 +77,7 @@ public final class SpawnPlayer implements Player {
 			
 		//CHECK FOR OVER ABONDANT FOOD
 		
-		if(foodleft > 75) {
+		if(foodleft > 75 && state == 30) {
 			state = 29;
 		}
 		

@@ -11,7 +11,7 @@ public final class SpawnSafeFarmer implements Player {//this class it really goo
 													  //and so that growth is in one direction 
 
 	static final String _CNAME = "SpawnSafeFarmer";
-	static final Color _CColor = new Color(1.0f, 0.67f, 0.67f);
+	static final Color _CColor = Color.GREEN;
 	private int state;
 	private Random rand;
 	private OrganismsGame game;
