@@ -6,9 +6,9 @@ import java.awt.Color;
 
 import organisms.*;
 
-public final class SpawnPlayerAlter implements Player {
+public final class LazySpawner implements Player {
 
-	static final String _CNAME = "SpawnPlayerAlter"; 
+	static final String _CNAME = "LazySpawner"; 
 	static final Color _CColor = Color.MAGENTA;
 	private int state;
 	private Random rand;

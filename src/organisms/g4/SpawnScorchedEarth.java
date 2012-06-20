@@ -9,7 +9,7 @@ import organisms.*;
 public final class SpawnScorchedEarth implements Player {
 
 	static final String _CNAME = "SpawnStarver"; 
-	static final Color _CColor = new Color(1.0f, 0.67f, 0.67f);
+	static final Color _CColor = Color.MAGENTA;
 	private int state;
 	private Random rand;
 	private OrganismsGame game;
@@ -23,7 +23,7 @@ public final class SpawnScorchedEarth implements Player {
 	{
 		rand = new Random();
 		state = key;
-		//state = rand.nextInt(256);
+		
 		this.game = game;
 	}
 
@@ -79,7 +79,7 @@ public final class SpawnScorchedEarth implements Player {
 		//CHECK FOR OVER ABONDANT FOOD
 		
 
-		if(foodleft > 75) {
+		if(foodleft > 75 && state == 30) {
 			state = 29;
 		}
 		
